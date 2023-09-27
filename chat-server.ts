@@ -33,7 +33,6 @@ app.use("/chats",chatController);
 app.use("*", (request: Request, response: Response) => {
   return response.status(404).json("not found");
 });
-
 server.listen(port, () => {
   setInterval(() => {
     console.log(`server is up on http://localhost:${port}`);
