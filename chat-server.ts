@@ -27,6 +27,9 @@ const corsOptions = {
 };
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
+app.use('/test', (req, res, next) => {
+  res.json({"result": "success"});
+});
 app.use("/authentication", authController);
 app.use("/users", usersController);
 app.use("/chats",chatController);
