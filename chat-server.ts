@@ -27,6 +27,7 @@ const corsOptions = {
 };
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
+
 app.use('/test', (req, res, next) => {
   res.json({"result": "success"});
 });
