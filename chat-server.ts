@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 dotenv.config();
 const corsOptions = {
-  origin: "https://emchatclient.azurewebsites.net/",
+  origin: "*",
   credentials: true,
 };
 app.use(bodyParser.json());
