@@ -5,7 +5,7 @@
   "main": " nodemon  chat-server.ts",
   "scripts": {
     "build": "npx tsc",
-    "start": "./node_modules/nodemon/bin/nodemon.js start dist/chat-server.js",
+    "start": "node dist/chat-server.js",
     "test": "echo \"Error: no test specified\"",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/chat-server.js\""
   },
