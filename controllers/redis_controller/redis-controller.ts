@@ -1,7 +1,7 @@
 import express, { Response } from "express";
 const jwt = require("jsonwebtoken");
 import dotenv from "dotenv";
-import { generateToken } from "../../middlewares/helper_functions/generate-token";
+import { generateValidToken } from "../../middlewares/helper_functions/generate-token";
 import { AccessToken } from "../../models/tokens_model/access-valid-token";
 import { RefreshToken } from "../../models/tokens_model/refresh-valid-token";
 dotenv.config();
@@ -40,7 +40,7 @@ router.post("/token", async (request: any, response: Response) => {
             accessToken: accessValidToken,
           });
           if (accessValidTokenDb) {
-            const newAccessValidToken = generateToken(payload);
+            const newAccessValidToken = generateValidToken(payload);
             //Before response new valid token update the old accessValidToken.
             const accessValidToken = await AccessToken.updateOne(
               { _id: accessValidTokenDb._id },

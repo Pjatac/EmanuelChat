@@ -1,7 +1,7 @@
 import express, { Response } from "express";
 const jwt = require("jsonwebtoken");
 import dotenv from "dotenv";
-import { generateToken } from "../../middlewares/helper_functions/generate-token";
+//import { generateToken } from "../../middlewares/helper_functions/generate-token";
 import { AccessToken } from "../../models/tokens_model/access-valid-token";
 import { RefreshToken } from "../../models/tokens_model/refresh-valid-token";
 import { getRedisDbClient } from "../../data_access_layer/redis-data-access-layer";
