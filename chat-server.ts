@@ -32,6 +32,7 @@ app.use("/authentication", authController);
 app.use("/users", usersController);
 app.use("/chats", chatController);
 app.use("/tokens",tokenController);
+app.use('/test', (req, res, next) => {res.json({"result":"success"})});
 app.use("*", (request:Request, response: Response) => {
   return response.status(404).json("not found");
 });
